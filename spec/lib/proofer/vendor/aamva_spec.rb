@@ -14,7 +14,7 @@ describe Proofer::Vendor::Aamva do
       state_id_type: 'drivers_license',
     }
   end
-  let(:session_id) { 'abc-123-efgh' }
+  let(:session_id) { nil }
   let(:success) { true }
   let(:verification_results) do
     {

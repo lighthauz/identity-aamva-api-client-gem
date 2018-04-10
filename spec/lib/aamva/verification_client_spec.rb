@@ -46,7 +46,7 @@ describe Aamva::VerificationClient do
 
         response = subject.send_verification_request(
           applicant: applicant,
-          session_id: '1234-abcd-efgh'
+          session_id: nil
         )
 
         expect(response).to be_a Aamva::Response::VerificationResponse
@@ -69,7 +69,7 @@ describe Aamva::VerificationClient do
 
         response = subject.send_verification_request(
           applicant: applicant,
-          session_id: '1234-abcd-efgh'
+          session_id: nil
         )
 
         expect(response).to be_a Aamva::Response::VerificationResponse

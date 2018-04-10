@@ -21,12 +21,11 @@ describe Aamva::Request::VerificationRequest do
     applicant
   end
   let(:auth_token) { 'KEYKEYKEY' }
-  let(:transaction_id) { '1234-abcd-efgh' }
 
   subject do
     described_class.new(
       applicant: applicant,
-      session_id: transaction_id,
+      session_id: nil,
       auth_token: auth_token
     )
   end
