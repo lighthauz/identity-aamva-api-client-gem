@@ -5,5 +5,7 @@ gemspec
 gem 'proofer', git: 'git@github.com:18F/identity-proofer-gem', tag: 'v2.7.0'
 
 group :development, :test do
+  gem 'guard'
   gem 'rubocop'
+  gem 'guard-rspec'
 end
