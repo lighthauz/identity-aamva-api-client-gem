@@ -9,6 +9,7 @@ module Aamva
         first_name: applicant[:first_name],
         middle_name: applicant[:middle_name],
         last_name: applicant[:last_name],
+        name_suffix: applicant[:name_suffix],
         dob: format_dob(applicant[:dob]),
         state_id_data: format_state_id_data(applicant),
         sex: applicant[:sex],

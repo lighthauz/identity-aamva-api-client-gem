@@ -16,6 +16,7 @@ describe Aamva::Response::VerificationResponse do
       last_name: true,
       first_name: true,
       middle_name: true,
+      name_suffix: true,
       sex: true,
       eye_color: true,
     }

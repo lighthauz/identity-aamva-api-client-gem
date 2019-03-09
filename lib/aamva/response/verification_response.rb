@@ -11,6 +11,7 @@ module Aamva
         'PersonLastNameExactMatchIndicator' => :last_name,
         'PersonFirstNameExactMatchIndicator' => :first_name,
         'PersonMiddleNameExactMatchIndicator' => :middle_name,
+        'PersonNameSuffixMatchIndicator' => :name_suffix,
         'PersonSexCodeMatchIndicator' => :sex,
         'PersonEyeColorMatchIndicator' => :eye_color,
       }.freeze

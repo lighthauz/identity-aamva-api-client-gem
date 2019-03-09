@@ -114,6 +114,7 @@ module Aamva
       def optional_data_map
         {
           '//ns2:PersonMiddleName' => applicant.middle_name,
+          '//ns2:PersonNameSuffixText' => applicant.name_suffix,
           '//ns1:PersonSexCode' => applicant.sex,
           '//ns1:PersonEyeColorCode' => applicant.eye_color,
         }
