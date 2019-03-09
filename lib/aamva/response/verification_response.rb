@@ -6,23 +6,31 @@ module Aamva
     class VerificationResponse
       VERIFICATION_ATTRIBUTES_MAP = {
         'DriverLicenseNumberMatchIndicator' => :state_id_number,
-        'DocumentCategoryMatchIndicator' => :state_id_type,
         'PersonBirthDateMatchIndicator' => :dob,
         'PersonLastNameExactMatchIndicator' => :last_name,
+        'PersonLastNameFuzzyPrimaryMatchIndicator' => :last_name_fuzzy,
+        # PersonLastNameFuzzyAlternateMatchIndicator
         'PersonFirstNameExactMatchIndicator' => :first_name,
+        # PersonFirstNameFuzzyPrimaryMatchIndicator
+        # PersonFirstNameFuzzyAlternateMatchIndicator
         'PersonMiddleNameExactMatchIndicator' => :middle_name,
+        # PersonMiddleNameFuzzyPrimaryMatchIndicator
+        # PersonMiddleNameFuzzyAlternateMatchIndicator
+        # PersonMiddleInitialMatchIndicator
         'PersonNameSuffixMatchIndicator' => :name_suffix,
+        'DocumentCategoryMatchIndicator' => :state_id_type,
         'DriverLicenseIssueDateMatchIndicator' => :issued_at,
         'DriverLicenseExpirationDateMatchIndicator' => :expires_at,
         'PersonSexCodeMatchIndicator' => :sex,
-        'PersonEyeColorMatchIndicator' => :eye_color,
         'PersonHeightMatchIndicator' => :height,
         'PersonWeightMatchIndicator' => :weight,
+        'PersonEyeColorMatchIndicator' => :eye_color,
         'AddressLine1MatchIndicator' => :address1,
         'AddressLine2MatchIndicator' => :address2,
         'AddressCityMatchIndicator' => :city,
         'AddressStateCodeMatchIndicator' => :state,
         'AddressZIP5MatchIndicator' => :zipcode,
+        # AddressZIP4MatchIndicator
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[

@@ -91,6 +91,7 @@ describe 'Cert Structured Test Plan' do
       state_id_number: nil,
       first_name: nil,
       last_name: nil,
+      last_name_fuzzy: nil,
       middle_name: nil,
       name_suffix: nil,
       dob: nil,

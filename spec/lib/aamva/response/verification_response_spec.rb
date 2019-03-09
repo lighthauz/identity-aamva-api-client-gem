@@ -14,6 +14,7 @@ describe Aamva::Response::VerificationResponse do
       state_id_type: true,
       dob: true,
       last_name: true,
+      last_name_fuzzy: true,
       first_name: true,
       middle_name: true,
       name_suffix: true,
