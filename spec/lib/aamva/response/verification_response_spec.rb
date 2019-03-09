@@ -21,6 +21,7 @@ describe Aamva::Response::VerificationResponse do
       first_name_fuzzy_alternate: true,
       middle_name: true,
       middle_name_fuzzy: true,
+      middle_name_fuzzy_alternate: true,
       name_suffix: true,
       issued_at: true,
       expires_at: true,
