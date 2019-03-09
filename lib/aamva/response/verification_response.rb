@@ -9,7 +9,7 @@ module Aamva
         'PersonBirthDateMatchIndicator' => :dob,
         'PersonLastNameExactMatchIndicator' => :last_name,
         'PersonLastNameFuzzyPrimaryMatchIndicator' => :last_name_fuzzy,
-        # PersonLastNameFuzzyAlternateMatchIndicator
+        'PersonLastNameFuzzyAlternateMatchIndicator' => :last_name_fuzzy_alternate,
         'PersonFirstNameExactMatchIndicator' => :first_name,
         # PersonFirstNameFuzzyPrimaryMatchIndicator
         # PersonFirstNameFuzzyAlternateMatchIndicator
