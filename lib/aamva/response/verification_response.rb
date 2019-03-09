@@ -10,6 +10,7 @@ module Aamva
         'PersonBirthDateMatchIndicator' => :dob,
         'PersonLastNameExactMatchIndicator' => :last_name,
         'PersonFirstNameExactMatchIndicator' => :first_name,
+        'PersonMiddleNameExactMatchIndicator' => :middle_name,
         'PersonSexCodeMatchIndicator' => :sex,
         'PersonEyeColorMatchIndicator' => :eye_color,
       }.freeze
