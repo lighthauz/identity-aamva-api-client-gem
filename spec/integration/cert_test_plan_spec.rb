@@ -34,8 +34,13 @@ describe 'Cert Structured Test Plan' do
         :state_id_type
       ]
 
-      expect_fields_present(response, expected_fields)
-      expect_fields_matched(response, expected_fields)
+      expect(response.verification_results).to eq(expected(
+        state_id_number: true,
+        state_id_type: true,
+        first_name: true,
+        last_name: true,
+        dob: true,
+      ))
     end
   end
 
@@ -65,36 +70,26 @@ describe 'Cert Structured Test Plan' do
 
       response = Aamva::VerificationClient.new.send_verification_request(applicant: aamva_applicant)
 
-      expected_fields = [
-        :state_id_number,
-        :state_id_type,
-        :first_name,
-        :last_name,
-        :dob,
-        # :eye_color,
-        # :sex,
-        # :address_line_1,
-        # :address_line_2,
-        # :city,
-        # :state,
-        # :height,
-        # :weight,
-        # :expires_at,
-        # :issued_at,
-      ]
-
-      expect_fields_present(response, expected_fields)
-      expect_fields_matched(response, expected_fields)
+      expect(response.verification_results).to eq(expected(
+        state_id_number: true,
+        state_id_type: true,
+        first_name: true,
+        last_name: true,
+        dob: true,
+        eye_color: true,
+      ))
     end
   end
 
-
-  def expect_fields_present(response, fields)
-    expect(response.verification_results.keys.sort).to eq(fields.sort)
-  end
-
-  def expect_fields_matched(response, fields)
-    fields.each { |field| expect(response.verification_results[field]).to eq(true) }
+  def expected(values)
+    {
+      state_id_number: nil,
+      first_name: nil,
+      last_name: nil,
+      dob: nil,
+      state_id_type: nil,
+      eye_color: nil
+    }.merge(values)
   end
 
   def state_id_type_from_category(category)

@@ -10,6 +10,7 @@ module Aamva
         'PersonBirthDateMatchIndicator' => :dob,
         'PersonLastNameExactMatchIndicator' => :last_name,
         'PersonFirstNameExactMatchIndicator' => :first_name,
+        'PersonEyeColorMatchIndicator' => :eye_color,
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[

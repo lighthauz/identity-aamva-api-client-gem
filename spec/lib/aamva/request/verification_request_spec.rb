@@ -26,7 +26,7 @@ describe Aamva::Request::VerificationRequest do
 
   describe '#body' do
     it 'should be a request body' do
-      expect(subject.body).to eq(Fixtures.verification_request)
+      expect(subject.body.gsub(/\s/, '')).to eq(Fixtures.verification_request.gsub(/\s/, ''))
     end
 
     it 'should escape XML in applicant data' do

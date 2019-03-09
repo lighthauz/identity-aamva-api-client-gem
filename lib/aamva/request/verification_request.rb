@@ -44,6 +44,14 @@ module Aamva
         user_provided_data_map.each do |xpath, data|
           REXML::XPath.first(document, xpath).add_text(data)
         end
+
+        optional_data_map.each do |xpath, data|
+          if data.nil?
+            document.delete_element(xpath)
+          else
+            REXML::XPath.first(document, xpath).add_text(data)
+          end
+        end
         @body = document.to_s
       end
 
@@ -102,6 +110,12 @@ module Aamva
         }
       end
       # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
+
+      def optional_data_map
+        {
+          '//ns1:PersonEyeColorCode' => applicant.eye_color,
+        }
+      end
 
       def uuid
         SecureRandom.uuid
