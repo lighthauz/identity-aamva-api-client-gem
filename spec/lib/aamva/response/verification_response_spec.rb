@@ -23,6 +23,11 @@ describe Aamva::Response::VerificationResponse do
       eye_color: true,
       height: true,
       weight: true,
+      address1: true,
+      address2: true,
+      city: true,
+      state: true,
+      zip_code: true,
     }
   end
 

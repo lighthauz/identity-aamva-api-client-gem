@@ -18,6 +18,11 @@ module Aamva
         'PersonEyeColorMatchIndicator' => :eye_color,
         'PersonHeightMatchIndicator' => :height,
         'PersonWeightMatchIndicator' => :weight,
+        'AddressLine1MatchIndicator' => :address1,
+        'AddressLine2MatchIndicator' => :address2,
+        'AddressCityMatchIndicator' => :city,
+        'AddressStateCodeMatchIndicator' => :state,
+        'AddressZIP5MatchIndicator' => :zip_code,
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[

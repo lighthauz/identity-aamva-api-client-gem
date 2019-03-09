@@ -17,7 +17,12 @@ module Aamva
         sex: applicant[:sex],
         eye_color: applicant[:eye_color],
         height: applicant[:height],
-        weight: applicant[:weight]
+        weight: applicant[:weight],
+        address1: applicant[:address1],
+        address2: applicant[:address2],
+        city: applicant[:city],
+        state: applicant[:state],
+        zip_code: applicant[:zip_code],
       )
     end
 

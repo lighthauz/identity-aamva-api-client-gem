@@ -42,16 +42,20 @@ module Aamva
       def add_user_provided_data_to_body
         document = REXML::Document.new(body)
         user_provided_data_map.each do |xpath, data|
-          REXML::XPath.first(document, xpath).add_text(data)
+          REXML::XPath.first(document, xpath).text = data
         end
 
         optional_data_map.each do |xpath, data|
           if data.nil?
             document.delete_element(xpath)
           else
-            REXML::XPath.first(document, xpath).add_text(data)
+            REXML::XPath.first(document, xpath).text = data
           end
         end
+
+        address = REXML::XPath.first(document, '//ns1:Address')
+        document.delete_element('//ns1:Address') unless address.has_elements?
+
         @body = document.to_s
       end
 
@@ -121,6 +125,11 @@ module Aamva
           '//ns1:PersonEyeColorCode' => applicant.eye_color,
           '//ns1:PersonHeightMeasure' => applicant.height,
           '//ns1:PersonWeightMeasure' => applicant.weight,
+          '//ns2:AddressDeliveryPointText[text()="1"]' => applicant.address1,
+          '//ns2:AddressDeliveryPointText[text()="2"]' => applicant.address2,
+          '//ns2:LocationCityName' => applicant.city,
+          '//ns2:LocationStateUsPostalServiceCode' => applicant.state,
+          '//ns2:LocationPostalCode' => applicant.zip_code,
         }
       end
 

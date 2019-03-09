@@ -50,14 +50,15 @@ describe 'Cert Structured Test Plan' do
         dob: '1980-01-01',
         eye_color: 'BRO',
         sex: '1',
-        address_line_1: '4301 Wilson Blvd',
-        address_line_2: '1234',
+        address1: '4301 Wilson Blvd',
+        address2: '1234',
         city: 'Arlington',
         state: 'VA',
+        zip_code: '22203',
         height: '510',
         weight: '200',
         expires_at: '20231010',
-        issued_at: '20111010'
+        issued_at: '20111010',
       }))
 
       response = Aamva::VerificationClient.new.send_verification_request(applicant: aamva_applicant)
@@ -76,6 +77,11 @@ describe 'Cert Structured Test Plan' do
         issued_at: true,
         height: true,
         weight: true,
+        address1: true,
+        address2: true,
+        city: true,
+        state: true,
+        zip_code: true,
       ))
     end
   end
@@ -95,7 +101,12 @@ describe 'Cert Structured Test Plan' do
       issued_at: nil,
       height: nil,
       weight: nil,
-    }.merge(values)
+      address1: nil,
+      address2: nil,
+      city: nil,
+      state: nil,
+      zip_code: nil,
+  }.merge(values)
   end
 
   def state_id_type_from_category(category)

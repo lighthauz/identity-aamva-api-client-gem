@@ -13,6 +13,20 @@ module Aamva
                :state_id_type,
                :state_id_jurisdiction
 
+    optional_attributes :middle_name,
+               :name_suffix,
+               :issued_at,
+               :expires_at,
+               :sex,
+               :eye_color,
+               :height,
+               :weight,
+               :address1,
+               :address2,
+               :city,
+               :state,
+               :zip_code
+
     stage :state_id
 
     proof :aamva_proof
