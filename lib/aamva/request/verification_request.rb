@@ -129,7 +129,7 @@ module Aamva
           '//ns2:AddressDeliveryPointText[text()="2"]' => applicant.address2,
           '//ns2:LocationCityName' => applicant.city,
           '//ns2:LocationStateUsPostalServiceCode' => applicant.state,
-          '//ns2:LocationPostalCode' => applicant.zip_code,
+          '//ns2:LocationPostalCode' => applicant.zipcode,
         }
       end
 

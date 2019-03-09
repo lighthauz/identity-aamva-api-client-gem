@@ -25,7 +25,7 @@ module Aamva
                :address2,
                :city,
                :state,
-               :zip_code
+               :zipcode
 
     stage :state_id
 

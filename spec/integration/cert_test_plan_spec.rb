@@ -54,7 +54,7 @@ describe 'Cert Structured Test Plan' do
         address2: '1234',
         city: 'Arlington',
         state: 'VA',
-        zip_code: '22203',
+        zipcode: '22203',
         height: '510',
         weight: '200',
         expires_at: '20231010',
@@ -81,7 +81,7 @@ describe 'Cert Structured Test Plan' do
         address2: true,
         city: true,
         state: true,
-        zip_code: true,
+        zipcode: true,
       ))
     end
   end
@@ -105,7 +105,7 @@ describe 'Cert Structured Test Plan' do
       address2: nil,
       city: nil,
       state: nil,
-      zip_code: nil,
+      zipcode: nil,
   }.merge(values)
   end
 

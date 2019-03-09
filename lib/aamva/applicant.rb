@@ -22,7 +22,7 @@ module Aamva
         address2: applicant[:address2],
         city: applicant[:city],
         state: applicant[:state],
-        zip_code: applicant[:zip_code],
+        zipcode: applicant[:zipcode],
       )
     end
 
