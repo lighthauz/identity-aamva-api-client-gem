@@ -72,6 +72,7 @@ describe 'Cert Structured Test Plan' do
         dob: true,
         sex: true,
         eye_color: true,
+        expires_at: true,
         issued_at: true,
       ))
     end
@@ -88,6 +89,7 @@ describe 'Cert Structured Test Plan' do
       state_id_type: nil,
       sex: nil,
       eye_color: nil,
+      expires_at: nil,
       issued_at: nil,
     }.merge(values)
   end

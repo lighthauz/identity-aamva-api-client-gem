@@ -18,6 +18,7 @@ describe Aamva::Response::VerificationResponse do
       middle_name: true,
       name_suffix: true,
       issued_at: true,
+      expires_at: true,
       sex: true,
       eye_color: true,
     }

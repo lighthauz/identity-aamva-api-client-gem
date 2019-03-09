@@ -11,6 +11,7 @@ module Aamva
         last_name: applicant[:last_name],
         name_suffix: applicant[:name_suffix],
         issued_at: format_date(applicant[:issued_at]),
+        expires_at: format_date(applicant[:expires_at]),
         dob: format_date(applicant[:dob]),
         state_id_data: format_state_id_data(applicant),
         sex: applicant[:sex],

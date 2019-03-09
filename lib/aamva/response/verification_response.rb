@@ -13,6 +13,7 @@ module Aamva
         'PersonMiddleNameExactMatchIndicator' => :middle_name,
         'PersonNameSuffixMatchIndicator' => :name_suffix,
         'DriverLicenseIssueDateMatchIndicator' => :issued_at,
+        'DriverLicenseExpirationDateMatchIndicator' => :expires_at,
         'PersonSexCodeMatchIndicator' => :sex,
         'PersonEyeColorMatchIndicator' => :eye_color,
       }.freeze
