@@ -74,6 +74,8 @@ describe 'Cert Structured Test Plan' do
         eye_color: true,
         expires_at: true,
         issued_at: true,
+        height: true,
+        weight: true,
       ))
     end
   end
@@ -92,6 +94,7 @@ describe 'Cert Structured Test Plan' do
       expires_at: nil,
       issued_at: nil,
       height: nil,
+      weight: nil,
     }.merge(values)
   end
 

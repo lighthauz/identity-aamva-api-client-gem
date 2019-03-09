@@ -22,6 +22,7 @@ describe Aamva::Response::VerificationResponse do
       sex: true,
       eye_color: true,
       height: true,
+      weight: true,
     }
   end
 

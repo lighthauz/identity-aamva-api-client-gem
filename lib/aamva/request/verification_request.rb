@@ -120,6 +120,7 @@ module Aamva
           '//ns1:PersonSexCode' => applicant.sex,
           '//ns1:PersonEyeColorCode' => applicant.eye_color,
           '//ns1:PersonHeightMeasure' => applicant.height,
+          '//ns1:PersonWeightMeasure' => applicant.weight,
         }
       end
 

@@ -16,6 +16,8 @@ module Aamva
         state_id_data: format_state_id_data(applicant),
         sex: applicant[:sex],
         eye_color: applicant[:eye_color],
+        height: applicant[:height],
+        weight: applicant[:weight]
       )
     end
 

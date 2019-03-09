@@ -17,6 +17,7 @@ module Aamva
         'PersonSexCodeMatchIndicator' => :sex,
         'PersonEyeColorMatchIndicator' => :eye_color,
         'PersonHeightMatchIndicator' => :height,
+        'PersonWeightMatchIndicator' => :weight,
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[
