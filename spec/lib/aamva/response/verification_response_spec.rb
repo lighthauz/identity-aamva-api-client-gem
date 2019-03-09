@@ -35,6 +35,7 @@ describe Aamva::Response::VerificationResponse do
       city: true,
       state: true,
       zipcode: true,
+      zipcode4: true
     }
   end
 

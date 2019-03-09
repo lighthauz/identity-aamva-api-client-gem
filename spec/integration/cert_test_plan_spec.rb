@@ -114,6 +114,7 @@ describe 'Cert Structured Test Plan' do
       city: nil,
       state: nil,
       zipcode: nil,
+      zipcode4: nil,
   }.merge(values)
   end
 

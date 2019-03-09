@@ -30,7 +30,7 @@ module Aamva
         'AddressCityMatchIndicator' => :city,
         'AddressStateCodeMatchIndicator' => :state,
         'AddressZIP5MatchIndicator' => :zipcode,
-        # AddressZIP4MatchIndicator
+        'AddressZIP4MatchIndicator' => :zipcode4
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[
