@@ -91,6 +91,7 @@ describe 'Cert Structured Test Plan' do
       eye_color: nil,
       expires_at: nil,
       issued_at: nil,
+      height: nil,
     }.merge(values)
   end
 

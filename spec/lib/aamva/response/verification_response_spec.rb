@@ -21,6 +21,7 @@ describe Aamva::Response::VerificationResponse do
       expires_at: true,
       sex: true,
       eye_color: true,
+      height: true,
     }
   end
 

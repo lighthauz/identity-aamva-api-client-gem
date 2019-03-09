@@ -16,6 +16,7 @@ module Aamva
         'DriverLicenseExpirationDateMatchIndicator' => :expires_at,
         'PersonSexCodeMatchIndicator' => :sex,
         'PersonEyeColorMatchIndicator' => :eye_color,
+        'PersonHeightMatchIndicator' => :height,
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[

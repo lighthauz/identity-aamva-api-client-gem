@@ -119,6 +119,7 @@ module Aamva
           '//ns1:DriverLicenseExpirationDate' => applicant.expires_at,
           '//ns1:PersonSexCode' => applicant.sex,
           '//ns1:PersonEyeColorCode' => applicant.eye_color,
+          '//ns1:PersonHeightMeasure' => applicant.height,
         }
       end
 
