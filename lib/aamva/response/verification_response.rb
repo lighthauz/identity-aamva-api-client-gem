@@ -6,10 +6,31 @@ module Aamva
     class VerificationResponse
       VERIFICATION_ATTRIBUTES_MAP = {
         'DriverLicenseNumberMatchIndicator' => :state_id_number,
-        'DocumentCategoryMatchIndicator' => :state_id_type,
         'PersonBirthDateMatchIndicator' => :dob,
         'PersonLastNameExactMatchIndicator' => :last_name,
+        'PersonLastNameFuzzyPrimaryMatchIndicator' => :last_name_fuzzy,
+        'PersonLastNameFuzzyAlternateMatchIndicator' => :last_name_fuzzy_alternate,
         'PersonFirstNameExactMatchIndicator' => :first_name,
+        'PersonFirstNameFuzzyPrimaryMatchIndicator' => :first_name_fuzzy,
+        'PersonFirstNameFuzzyAlternateMatchIndicator' => :first_name_fuzzy_alternate,
+        'PersonMiddleNameExactMatchIndicator' => :middle_name,
+        'PersonMiddleNameFuzzyPrimaryMatchIndicator' => :middle_name_fuzzy,
+        'PersonMiddleNameFuzzyAlternateMatchIndicator' => :middle_name_fuzzy_alternate,
+        'PersonMiddleInitialMatchIndicator' => :middle_initial,
+        'PersonNameSuffixMatchIndicator' => :name_suffix,
+        'DocumentCategoryMatchIndicator' => :state_id_type,
+        'DriverLicenseIssueDateMatchIndicator' => :issued_at,
+        'DriverLicenseExpirationDateMatchIndicator' => :expires_at,
+        'PersonSexCodeMatchIndicator' => :sex,
+        'PersonHeightMatchIndicator' => :height,
+        'PersonWeightMatchIndicator' => :weight,
+        'PersonEyeColorMatchIndicator' => :eye_color,
+        'AddressLine1MatchIndicator' => :address1,
+        'AddressLine2MatchIndicator' => :address2,
+        'AddressCityMatchIndicator' => :city,
+        'AddressStateCodeMatchIndicator' => :state,
+        'AddressZIP5MatchIndicator' => :zipcode,
+        'AddressZIP4MatchIndicator' => :zipcode4
       }.freeze
 
       REQUIRED_VERIFICATION_ATTRIBUTES = %i[

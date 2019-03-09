@@ -32,7 +32,7 @@ module Fixtures
   end
 
   def self.aamva_test_data
-    read_fixture_file('aamva_test_data.csv')
+    read_fixture_file('aamva_test_data.csv') rescue ''
   end
 
   def self.authentication_token_request

@@ -14,7 +14,28 @@ describe Aamva::Response::VerificationResponse do
       state_id_type: true,
       dob: true,
       last_name: true,
+      last_name_fuzzy: true,
+      last_name_fuzzy_alternate: true,
       first_name: true,
+      first_name_fuzzy: true,
+      first_name_fuzzy_alternate: true,
+      middle_name: true,
+      middle_name_fuzzy: true,
+      middle_name_fuzzy_alternate: true,
+      middle_initial: true,
+      name_suffix: true,
+      issued_at: true,
+      expires_at: true,
+      sex: true,
+      eye_color: true,
+      height: true,
+      weight: true,
+      address1: true,
+      address2: true,
+      city: true,
+      state: true,
+      zipcode: true,
+      zipcode4: true
     }
   end
 
