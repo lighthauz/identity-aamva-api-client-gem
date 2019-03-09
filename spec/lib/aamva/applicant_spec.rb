@@ -46,20 +46,20 @@ describe Aamva::Applicant do
     expect(aamva_applicant[:dob]).to eq('1942-10-29')
   end
 
-  it 'should format empty or malformed dobs into empty strings' do
+  it 'should format empty or malformed dobs into nil' do
     proofer_applicant[:dob] = ''
     aamva_applicant = Aamva::Applicant.from_proofer_applicant(proofer_applicant)
 
-    expect(aamva_applicant.dob).to eq('')
+    expect(aamva_applicant.dob).to be_nil
 
     proofer_applicant[:dob] = nil
     aamva_applicant = Aamva::Applicant.from_proofer_applicant(proofer_applicant)
 
-    expect(aamva_applicant[:dob]).to eq('')
+    expect(aamva_applicant[:dob]).to be_nil
 
     proofer_applicant[:dob] = '10/29/19422'
     aamva_applicant = Aamva::Applicant.from_proofer_applicant(proofer_applicant)
 
-    expect(aamva_applicant[:dob]).to eq('')
+    expect(aamva_applicant[:dob]).to be_nil
   end
 end

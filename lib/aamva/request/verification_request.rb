@@ -115,6 +115,7 @@ module Aamva
         {
           '//ns2:PersonMiddleName' => applicant.middle_name,
           '//ns2:PersonNameSuffixText' => applicant.name_suffix,
+          '//ns1:DriverLicenseIssueDate' => applicant.issued_at,
           '//ns1:PersonSexCode' => applicant.sex,
           '//ns1:PersonEyeColorCode' => applicant.eye_color,
         }
