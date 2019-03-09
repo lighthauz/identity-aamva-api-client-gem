@@ -16,7 +16,7 @@ module Aamva
         'PersonMiddleNameExactMatchIndicator' => :middle_name,
         'PersonMiddleNameFuzzyPrimaryMatchIndicator' => :middle_name_fuzzy,
         'PersonMiddleNameFuzzyAlternateMatchIndicator' => :middle_name_fuzzy_alternate,
-        # PersonMiddleInitialMatchIndicator
+        'PersonMiddleInitialMatchIndicator' => :middle_initial,
         'PersonNameSuffixMatchIndicator' => :name_suffix,
         'DocumentCategoryMatchIndicator' => :state_id_type,
         'DriverLicenseIssueDateMatchIndicator' => :issued_at,
