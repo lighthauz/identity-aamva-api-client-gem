@@ -14,7 +14,7 @@ module Aamva
         'PersonFirstNameFuzzyPrimaryMatchIndicator' => :first_name_fuzzy,
         'PersonFirstNameFuzzyAlternateMatchIndicator' => :first_name_fuzzy_alternate,
         'PersonMiddleNameExactMatchIndicator' => :middle_name,
-        # PersonMiddleNameFuzzyPrimaryMatchIndicator
+        'PersonMiddleNameFuzzyPrimaryMatchIndicator' => :middle_name_fuzzy,
         # PersonMiddleNameFuzzyAlternateMatchIndicator
         # PersonMiddleInitialMatchIndicator
         'PersonNameSuffixMatchIndicator' => :name_suffix,
