@@ -113,6 +113,7 @@ module Aamva
 
       def optional_data_map
         {
+          '//ns1:PersonSexCode' => applicant.sex,
           '//ns1:PersonEyeColorCode' => applicant.eye_color,
         }
       end

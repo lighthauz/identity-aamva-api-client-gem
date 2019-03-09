@@ -15,5 +15,22 @@
   <PersonFirstNameExactMatchIndicator>true</PersonFirstNameExactMatchIndicator>
   <PersonFirstNameFuzzyPrimaryMatchIndicator>true</PersonFirstNameFuzzyPrimaryMatchIndicator>
   <PersonFirstNameFuzzyAlternateMatchIndicator>true</PersonFirstNameFuzzyAlternateMatchIndicator>
+  <PersonMiddleNameExactMatchIndicator>true</PersonMiddleNameExactMatchIndicator>
+  <PersonMiddleNameFuzzyPrimaryMatchIndicator>true</PersonMiddleNameFuzzyPrimaryMatchIndicator>
+  <PersonMiddleNameFuzzyAlternateMatchIndicator>true</PersonMiddleNameFuzzyAlternateMatchIndicator>
+  <PersonMiddleInitialMatchIndicator>true</PersonMiddleInitialMatchIndicator>
+  <PersonNameSuffixMatchIndicator>true</PersonNameSuffixMatchIndicator>
   <DocumentCategoryMatchIndicator>true</DocumentCategoryMatchIndicator>
+  <DriverLicenseIssueDateMatchIndicator>true</DriverLicenseIssueDateMatchIndicator>
+  <DriverLicenseExpirationDateMatchIndicator>true</DriverLicenseExpirationDateMatchIndicator>
+  <PersonSexCodeMatchIndicator>true</PersonSexCodeMatchIndicator>
+  <PersonHeightMatchIndicator>true</PersonHeightMatchIndicator>
+  <PersonWeightMatchIndicator>true</PersonWeightMatchIndicator>
+  <PersonEyeColorMatchIndicator>true</PersonEyeColorMatchIndicator>
+  <AddressLine1MatchIndicator>true</AddressLine1MatchIndicator>
+  <AddressLine2MatchIndicator>true</AddressLine2MatchIndicator>
+  <AddressCityMatchIndicator>true</AddressCityMatchIndicator>
+  <AddressStateCodeMatchIndicator>true</AddressStateCodeMatchIndicator>
+  <AddressZIP5MatchIndicator>true</AddressZIP5MatchIndicator>
+  <AddressZIP4MatchIndicator>true</AddressZIP4MatchIndicator>
 </dldv:VerifyDriverLicenseDataResponse>

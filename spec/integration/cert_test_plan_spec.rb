@@ -26,14 +26,6 @@ describe 'Cert Structured Test Plan' do
 
       response = Aamva::VerificationClient.new.send_verification_request(applicant: aamva_applicant)
 
-      expected_fields = [
-        :state_id_number,
-        :first_name,
-        :last_name,
-        :dob,
-        :state_id_type
-      ]
-
       expect(response.verification_results).to eq(expected(
         state_id_number: true,
         state_id_type: true,
@@ -76,6 +68,7 @@ describe 'Cert Structured Test Plan' do
         first_name: true,
         last_name: true,
         dob: true,
+        sex: true,
         eye_color: true,
       ))
     end
@@ -88,7 +81,8 @@ describe 'Cert Structured Test Plan' do
       last_name: nil,
       dob: nil,
       state_id_type: nil,
-      eye_color: nil
+      sex: nil,
+      eye_color: nil,
     }.merge(values)
   end
 

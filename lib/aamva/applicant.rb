@@ -10,7 +10,8 @@ module Aamva
         last_name: applicant[:last_name],
         dob: format_dob(applicant[:dob]),
         state_id_data: format_state_id_data(applicant),
-        eye_color: applicant[:eye_color]
+        sex: applicant[:sex],
+        eye_color: applicant[:eye_color],
       )
     end
 
