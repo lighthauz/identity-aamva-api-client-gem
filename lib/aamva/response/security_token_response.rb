@@ -41,7 +41,7 @@ module Aamva
       end
 
       def handle_soap_error
-        error_handler = SoapErrorHander.new(http_response)
+        error_handler = SoapErrorHandler.new(http_response)
         return unless error_handler.error_present?
         raise AuthenticationError, error_handler.error_message
       end

@@ -17,7 +17,6 @@ describe 'Cert Structured Test Plan' do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
         state_id_number: 'DLDVSTRUCTUREDTEST11',
-        state_id_jurisdiction: '22203',
         state_id_type: state_id_type_from_category('1'),
         first_name: 'STEVEN',
         last_name: 'BROWN',
@@ -41,7 +40,6 @@ describe 'Cert Structured Test Plan' do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
         state_id_number: 'DLDVSTRUCTUREDTEST12',
-        state_id_jurisdiction: '22203',
         state_id_type: state_id_type_from_category('1'),
         first_name: 'STEVEN',
         last_name: 'BROWN',
@@ -84,6 +82,39 @@ describe 'Cert Structured Test Plan' do
         state: true,
         zipcode: true,
       ))
+    end
+  end
+
+  context 'Test Case #17' do
+    it 'should pass' do
+      aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
+        uuid: SecureRandom.uuid,
+        state_id_number: '',
+        state_id_type: state_id_type_from_category('2'),
+        first_name: '',
+        last_name: '',
+        middle_name: '',
+        dob: '',
+        eye_color: 'GRY',
+        sex: '2',
+        address1: '4301 WILSON BLVD',
+        city: 'ARLINGTON',
+        state: 'VA',
+        zipcode: '22203',
+        height: '510',
+        weight: '200',
+        expires_at: '2016-02-29',
+      }))
+
+      begin
+        Aamva::VerificationClient.new.send_verification_request(applicant: aamva_applicant)
+      rescue => e
+        error = e
+      end
+
+      expect(error).to be
+      expect(error.errors.first[:id]).to eq('3401')
+      expect(error.errors.first[:text]).to eq('Driver License ID is required')
     end
   end
 

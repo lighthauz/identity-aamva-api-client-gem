@@ -1,4 +1,4 @@
-describe Aamva::SoapErrorHander do
+describe Aamva::SoapErrorHandler do
   let(:response_body) { Fixtures.soap_fault_response }
 
   subject do
@@ -63,6 +63,43 @@ describe Aamva::SoapErrorHander do
       end
 
       it { expect(subject.error_message).to include('A SOAP error occurred') }
+    end
+  end
+
+  describe 'errors' do
+    context 'when there is no error' do
+      let(:response_body) { Fixtures.authentication_token_response }
+
+      it { expect(subject.errors).to be_empty }
+    end
+
+    context 'when there is an error without a ProgramException section' do
+      let(:response_body) do
+        delete_xml_at_xpath(
+          Fixtures.soap_fault_response,
+          '//ProgramExceptions'
+        )
+      end
+
+      it { expect(subject.errors).to be_empty }
+    end
+
+    context 'when there is an error' do
+      it 'contains an array of the errors with mapped fields' do
+        expect(subject.errors).to eq([{
+          id: '0047',
+          text: 'MVA did not respond in a timely fashion',
+          type: 'I',
+          fatal: true,
+          actor: 'DLDV VSS',
+        }, {
+          id: '0048',
+          text: 'Servers are experiencing higher than regular traffic',
+          type: 'J',
+          fatal: true,
+          actor: 'DLDV VSS'
+        }])
+      end
     end
   end
 end
