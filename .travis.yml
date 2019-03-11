@@ -1,0 +1,8 @@
+language: ruby
+cache: bundler
+notifications:
+  slack:
+    on_success: always
+    on_failure: always
+    rooms:
+      secure: "sHi+Xef/pJhIsuC55qarIGx3z8iltR8jBTM+jrueJUPABUGUVci1G7ACthC2q68wpfBypauoiKeI5MIJleb18Z2jwMM1+UC4Zh+rh4ctGKO/6laJAwB/b4bd7LTnoXP9WfCJ5z5WSvQmQJR8jAv8+gJl9lCgAD7Bn/sP6IrkmJD6jj53DAxMjJVjt4y5m0/SY1Gmz5/YS6os9Da2sLShCSkLNrRy38RSRN0OqrN+imvX1TZOt8Z4lHDJYOoEkYj00FfS7XoYzgXjfe+Pf8ucLyqOoFFAQjbZb8MuzRmharrhipmYlNv6YvFch1gO9Y88WyTYe5vuiL+vX4GeWa3pOVg24usIj2TOTD2i9lcOvdhsvejqogfR+hr7cxTMGoLyp0riigoHcb/9SKHgcxUFvHpud4Q0nXruCJK7A/pVAS/4B35dq+NdY2hsTzW7MZkuAreFkrlCr9PJB4Xz8Xl4K/qXF8mIjWzntqJiWjcaAoz5oZodRi0jea6ksnGJGtB8AUSTOGEYLmx6BB/xOvInuy5MpPxW1c1T0KL6tLl8Xrmi5d8JbARg1hzHhRZbV2VwSdgyEV9hpPSs6E8NjvwkmaFWR8mu4yXuGDz2yRf7uBu5mq8XWsDpBXNLZagsKePecsmyzu/7fZOOkaajpLeCvheh4eYHJhDYOt3OMqTge+M="
