@@ -8,4 +8,6 @@ group :development, :test do
   gem 'guard'
   gem 'rubocop'
   gem 'guard-rspec'
+  gem 'ruby-progressbar'
+  gem 'fuubar'
 end
