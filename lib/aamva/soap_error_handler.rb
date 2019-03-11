@@ -2,16 +2,22 @@ require 'rexml/document'
 require 'rexml/xpath'
 
 module Aamva
-  class SoapErrorHander
+  class SoapErrorHandler
     attr_reader :error_message
 
     def initialize(http_response)
       @document = REXML::Document.new(http_response.body)
-      parse_error_message
+      @errors = []
+
+      parse_errors
     end
 
     def error_present?
       @error_present
+    end
+
+    def errors
+      @errors
     end
 
     private
@@ -20,23 +26,47 @@ module Aamva
 
     def add_program_exception_messages
       return if program_exception_nodes.empty?
-      @error_message += ' - ' + program_exception_nodes.map do |exception_node|
-        program_exception_message_for_exception_node(exception_node)
+      @error_message += ' - ' + raw_errors.map do |raw_error|
+        program_exception_message_for_exception_node(raw_error)
       end.join(' ; ')
     end
 
-    def parse_error_message
+    def parse_errors
       @error_present = !soap_fault_node.nil?
       return unless error_present?
+
+      @errors = raw_errors.map { |raw_error| map_error(raw_error) }
       @error_message = soap_error_reason_text_node&.text || 'A SOAP error occurred'
       add_program_exception_messages
     end
 
-    def program_exception_message_for_exception_node(exception_node)
+    def map_error(raw_error)
+      {
+        id: raw_error['ExceptionId'],
+        text: raw_error['ExceptionText'],
+        type: raw_error['ExceptionTypeCode'],
+        fatal: raw_error['ExceptionFatalIndicatorCode'].nil? ? nil : 'true' == raw_error['ExceptionFatalIndicatorCode'],
+        actor: raw_error['ExceptionActorText'],
+      }
+    end
+
+    def raw_errors
+      @raw_errors ||= program_exception_nodes.map do |raw_error|
+        parse_raw_error(raw_error)
+      end
+    end
+
+    def parse_raw_error(exception_node)
       exception_node.children.map do |child|
         next unless child.node_type == :element
-        "#{child.name}: #{child.text}"
-      end.compact.join(', ')
+        [child.name, child.text]
+      end.compact.to_h
+    end
+
+    def program_exception_message_for_exception_node(raw_error)
+      raw_error.map do |name, text|
+        "#{name}: #{text}"
+      end.join(', ')
     end
 
     def program_exception_nodes

@@ -93,9 +93,14 @@ module Aamva
       end
 
       def handle_soap_error
-        error_handler = SoapErrorHander.new(http_response)
+        error_handler = SoapErrorHandler.new(http_response)
         return unless error_handler.error_present?
-        raise VerificationError, error_handler.error_message
+
+        if error_handler.errors.empty?
+          raise VerificationError, error_handler.error_message
+        else
+          raise VerificationSoapFault.new(error_handler.error_message, error_handler.errors)
+        end
       end
 
       def node_for_match_indicator(match_indicator_name)
