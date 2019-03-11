@@ -1,5 +1,5 @@
 
-describe 'Cert Structured Test Plan' do
+xdescribe 'Cert Structured Test Plan' do
   before do
     Dotenv.load.each do |key, value|
       ENV[key] = value
