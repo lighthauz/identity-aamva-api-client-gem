@@ -1,6 +1,6 @@
 language: ruby
 cache: bundler
-script: bundle exec rspec
+script: bundle exec rspec spec/lib
 notifications:
   slack:
     on_success: always
