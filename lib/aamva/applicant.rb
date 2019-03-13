@@ -23,6 +23,7 @@ module Aamva
         city: applicant[:city],
         state: applicant[:state],
         zipcode: applicant[:zipcode],
+        message_originator_id: applicant[:message_originator_id]
       )
     end
 

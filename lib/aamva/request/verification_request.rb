@@ -108,6 +108,7 @@ module Aamva
           '//ns2:IdentificationID' => applicant.state_id_data.state_id_number,
           '//ns1:DocumentCategoryCode' => document_category_code,
           '//ns1:MessageDestinationId' => message_destination_id,
+          '//ns1:MessageOriginatorId' => applicant.message_originator_id,
           '//ns2:PersonGivenName' => applicant.first_name,
           '//ns2:PersonSurName' => applicant.last_name,
           '//ns1:PersonBirthDate' => applicant.dob,

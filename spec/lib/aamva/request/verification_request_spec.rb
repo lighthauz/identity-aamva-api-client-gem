@@ -4,6 +4,7 @@ describe Aamva::Request::VerificationRequest do
       uuid: '1234-abcd-efgh',
       first_name: 'Testy',
       last_name: 'McTesterson',
+      message_originator_id: 'GSA',
       dob: '10/29/1942',
     )
     applicant.state_id_data.merge!(
