@@ -106,18 +106,18 @@ module Aamva
         applicant_address = applicant.address
         {
           '//ns2:IdentificationID' => applicant.state_id_data.state_id_number,
-          '//ns1:DocumentCategoryCode' => document_category_code,
           '//ns1:MessageDestinationId' => message_destination_id,
           '//ns1:MessageOriginatorId' => applicant.message_originator_id,
-          '//ns2:PersonGivenName' => applicant.first_name,
-          '//ns2:PersonSurName' => applicant.last_name,
-          '//ns1:PersonBirthDate' => applicant.dob,
         }
       end
       # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
       def optional_data_map
         {
+          '//ns1:DocumentCategoryCode' => document_category_code,
+          '//ns2:PersonGivenName' => applicant.first_name,
+          '//ns2:PersonSurName' => applicant.last_name,
+          '//ns1:PersonBirthDate' => applicant.dob,
           '//ns2:PersonMiddleName' => applicant.middle_name,
           '//ns2:PersonNameSuffixText' => applicant.name_suffix,
           '//ns1:DriverLicenseIssueDate' => applicant.issued_at,
