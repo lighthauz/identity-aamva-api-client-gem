@@ -1,5 +1,5 @@
 
-xdescribe 'Cert Structured Test Plan' do
+describe 'AAMVA Cert environment', :aamva do
   before do
     Dotenv.load.each do |key, value|
       ENV[key] = value
@@ -12,10 +12,27 @@ xdescribe 'Cert Structured Test Plan' do
     WebMock.disable_net_connect!
   end
 
+  context 'minimum required fields' do
+    it 'should pass' do
+      aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
+        uuid: SecureRandom.uuid,
+        message_originator_id: 'TRU',
+        state_id_number: 'DLDVSTRUCTUREDTEST11',
+      }))
+
+      response = Aamva::VerificationClient.new.send_verification_request(applicant: aamva_applicant)
+
+      expect(response.verification_results).to eq(expected(
+        state_id_number: true,
+      ))
+    end
+  end
+
   context 'Test Case #1' do
     it 'should pass' do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
+        message_originator_id: 'TRU',
         state_id_number: 'DLDVSTRUCTUREDTEST11',
         state_id_type: state_id_type_from_category('1'),
         first_name: 'STEVEN',
@@ -39,6 +56,7 @@ xdescribe 'Cert Structured Test Plan' do
     it 'should pass' do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
+        message_originator_id: 'TRU',
         state_id_number: 'DLDVSTRUCTUREDTEST12',
         state_id_type: state_id_type_from_category('1'),
         first_name: 'STEVEN',
@@ -89,6 +107,7 @@ xdescribe 'Cert Structured Test Plan' do
     it 'should pass' do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
+        message_originator_id: 'TRU',
         state_id_number: '',
         state_id_type: state_id_type_from_category('2'),
         first_name: '',
