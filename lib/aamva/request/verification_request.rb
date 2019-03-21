@@ -85,7 +85,6 @@ module Aamva
       end
 
       def message_destination_id
-        return 'P6' if Env.fetch('AAMVA_CERT_ENABLED') == 'true'
         applicant.state_id_data.state_id_jurisdiction
       end
 

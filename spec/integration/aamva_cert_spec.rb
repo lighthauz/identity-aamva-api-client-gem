@@ -17,6 +17,7 @@ describe 'AAMVA Cert environment', :aamva do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
         message_originator_id: 'TRU',
+        state_id_jurisdiction: 'P6',
         state_id_number: 'DLDVSTRUCTUREDTEST11',
       }))
 
@@ -33,6 +34,7 @@ describe 'AAMVA Cert environment', :aamva do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
         message_originator_id: 'TRU',
+        state_id_jurisdiction: 'P6',
         state_id_number: 'DLDVSTRUCTUREDTEST11',
         state_id_type: state_id_type_from_category('1'),
         first_name: 'STEVEN',
@@ -57,6 +59,7 @@ describe 'AAMVA Cert environment', :aamva do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
         message_originator_id: 'TRU',
+        state_id_jurisdiction: 'P6',
         state_id_number: 'DLDVSTRUCTUREDTEST12',
         state_id_type: state_id_type_from_category('1'),
         first_name: 'STEVEN',
@@ -108,6 +111,7 @@ describe 'AAMVA Cert environment', :aamva do
       aamva_applicant = Aamva::Applicant.from_proofer_applicant(OpenStruct.new({
         uuid: SecureRandom.uuid,
         message_originator_id: 'TRU',
+        state_id_jurisdiction: 'P6',
         state_id_number: '',
         state_id_type: state_id_type_from_category('2'),
         first_name: '',
