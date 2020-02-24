@@ -69,6 +69,4 @@ describe Aamva::Request::VerificationRequest do
       )
     end
   end
-
-
 end
