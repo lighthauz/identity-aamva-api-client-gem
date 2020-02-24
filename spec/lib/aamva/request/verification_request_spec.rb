@@ -26,7 +26,7 @@ describe Aamva::Request::VerificationRequest do
   end
 
   def normalize(xml)
-    xml.gsub(/\s+/, ' ')
+    xml.gsub(/\s+/, '')
   end
 
   describe '#body' do
@@ -40,6 +40,15 @@ describe Aamva::Request::VerificationRequest do
       expect(subject.body).to_not include('<foo></bar>')
       expect(subject.body).to include('&lt;foo&gt;&lt;/bar&gt;')
     end
+
+    it 'should not have space surrounding value of the TransactionLocatorId element' do
+      expect(subject.body).to include('<ns1:TransactionLocatorId>1234-abcd-efgh</ns1:TransactionLocatorId>')
+    end
+
+    it 'should not have space surrounding value of the token element' do
+      expect(subject.body).to include('<ns:token>KEYKEYKEY</ns:token>')
+    end
+
   end
 
   describe '#headers' do
