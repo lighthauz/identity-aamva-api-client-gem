@@ -4,15 +4,11 @@
   </soap:Header>
   <soap:Body>
     <ns:VerifyDriverLicenseData>
-      <ns:token>
-        <%= auth_token %>
-      </ns:token>
+      <ns:token><%= auth_token %></ns:token>
       <ns:verifyDriverLicenseDataRequest>
         <ns1:ControlData>
           <ns1:MessageAddress>
-            <ns1:TransactionLocatorId>
-              <%= transaction_locator_id %>
-            </ns1:TransactionLocatorId>
+            <ns1:TransactionLocatorId><%= transaction_locator_id %></ns1:TransactionLocatorId>
             <ns1:MessageOriginatorId></ns1:MessageOriginatorId>
             <ns1:MessageDestinationId></ns1:MessageDestinationId>
           </ns1:MessageAddress>
