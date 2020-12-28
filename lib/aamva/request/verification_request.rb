@@ -1,6 +1,7 @@
 require 'erb'
 require 'rexml/document'
 require 'rexml/xpath'
+require 'rexml/text'
 require 'securerandom'
 require 'typhoeus'
 
@@ -97,7 +98,7 @@ module Aamva
       end
 
       def transaction_locator_id
-        applicant.uuid
+        REXML::Text.new(applicant.uuid).to_s
       end
 
       # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
