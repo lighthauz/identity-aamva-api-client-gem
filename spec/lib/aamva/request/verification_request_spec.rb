@@ -41,6 +41,12 @@ describe Aamva::Request::VerificationRequest do
       expect(subject.body).to include('&lt;foo&gt;&lt;/bar&gt;')
     end
 
+    it  'should escape XML in the transaction_locator_id' do
+      applicant.uuid = '<foo></bar>'
+
+      expect(subject.body).to include('<ns1:TransactionLocatorId>&lt;foo&gt;&lt;/bar&gt;</ns1:TransactionLocatorId>')
+    end
+
     it 'should not have space surrounding value of the TransactionLocatorId element' do
       expect(subject.body).to include('<ns1:TransactionLocatorId>1234-abcd-efgh</ns1:TransactionLocatorId>')
     end
